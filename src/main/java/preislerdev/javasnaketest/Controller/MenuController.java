@@ -10,18 +10,16 @@ import preislerdev.javasnaketest.FxmlFunc;
 public class MenuController {
     private Parent root;
     private final FxmlFunc fxmlFunc = new FxmlFunc();
+
+    @FXML
+    protected void closeApp(ActionEvent event) {
+        System.exit(0);
+    }
     @FXML
     protected void toGamePage(ActionEvent event) throws Exception {
-
-        String username = "name";
-
         //loading the fxml file;
         FXMLLoader loader = fxmlFunc.loadFXML("game");
         root = loader.load();
-
-        //passing the username to the game page
-        GameController gameController = loader.getController();
-        gameController.display(username);
 
         //loading the scene
         fxmlFunc.loadPage(root, event);

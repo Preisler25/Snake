@@ -6,19 +6,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.MenuController">
    <children>
-      <VBox alignment="CENTER" layoutX="304.0" layoutY="71.0" prefHeight="475.0" prefWidth="238.0">
+      <VBox alignment="CENTER" layoutX="711.0" layoutY="37.0" prefHeight="1026.0" prefWidth="514.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#toGamePage" text="Game" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
-            <Button mnemonicParsing="false" onAction="#toSettingsPage" text="Settings" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
-            <Button mnemonicParsing="false" onAction="#toProfilePage" text="Profile" />
+            <Button mnemonicParsing="false" onAction="#toGamePage" scaleX="5.0" scaleY="5.0" text="Game" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="7.0" scaleX="0.0" scaleY="0.0" />
+            <Button mnemonicParsing="false" onAction="#toSettingsPage" scaleX="5.0" scaleY="5.0" text="Settings" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="366.0" prefWidth="37.0" />
+            <Button mnemonicParsing="false" onAction="#toProfilePage" scaleX="5.0" scaleY="5.0" text="Profile" />
          </children>
          <effect>
             <DropShadow />
          </effect>
       </VBox>
+      <Button fx:id="clsButton" layoutX="62.0" layoutY="64.0" mnemonicParsing="false" onAction="#closeApp" scaleX="5.0" scaleY="5.0" text="X" />
    </children>
 </AnchorPane>

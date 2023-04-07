@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.SettingsController">
+<AnchorPane prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.SettingsController">
    <children>
-      <VBox alignment="CENTER" layoutX="474.0" layoutY="11.0" prefHeight="696.0" prefWidth="349.0">
+      <VBox alignment="CENTER" layoutX="723.0" layoutY="35.0" prefHeight="954.0" prefWidth="478.0">
          <children>
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-            <Label scaleX="3.0" scaleY="3.0" text="Username" translateY="-30.0" />
+            <Label scaleX="5.0" scaleY="5.0" text="Username" translateY="-30.0" />
             <TextArea fx:id="username" prefHeight="100.0" prefWidth="200.0" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-            <Label scaleX="3.0" scaleY="3.0" text="Music" translateY="-30.0" />
+            <Label scaleX="5.0" scaleY="5.0" text="Music" translateY="-30.0" />
             <Slider fx:id="music" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
             <Button mnemonicParsing="false" scaleX="3.0" scaleY="3.0" text="Apply" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
          </children>
       </VBox>
-      <Button layoutX="41.0" layoutY="32.0" mnemonicParsing="false" onAction="#toMenuPage" scaleX="2.0" scaleY="2.0" text="Back" />
+      <Button layoutX="119.0" layoutY="76.0" mnemonicParsing="false" onAction="#toMenuPage" scaleX="3.0" scaleY="3.0" text="&lt;--" />
    </children>
 </AnchorPane>

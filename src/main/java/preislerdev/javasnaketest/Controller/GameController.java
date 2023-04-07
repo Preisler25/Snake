@@ -11,12 +11,6 @@ import preislerdev.javasnaketest.FxmlFunc;
 public class GameController {
     private Parent root;
     private final FxmlFunc fxmlFunc = new FxmlFunc();
-    @FXML
-    Label nameLabel;
-
-    public void display(String name) {
-        nameLabel.setText(name);
-    }
 
     @FXML
     public void startGame(ActionEvent event) throws Exception {
