@@ -8,20 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.SettingsController">
    <children>
       <VBox alignment="CENTER" layoutX="209.0" layoutY="21.0" prefHeight="367.0" prefWidth="184.0">
          <children>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
             <Label text="Username" />
-            <TextArea fx:id="username" prefHeight="200.0" prefWidth="200.0" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TextArea fx:id="username" prefHeight="100.0" prefWidth="200.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
             <Label text="Music" />
             <Slider fx:id="music" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
             <Button mnemonicParsing="false" text="Apply" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
          </children>
       </VBox>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#toMenuPage" text="Back" />

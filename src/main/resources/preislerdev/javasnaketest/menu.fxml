@@ -11,9 +11,9 @@
       <VBox alignment="CENTER" layoutX="304.0" layoutY="71.0" prefHeight="475.0" prefWidth="238.0">
          <children>
             <Button mnemonicParsing="false" onAction="#toGamePage" text="Game" />
-            <Separator orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
             <Button mnemonicParsing="false" onAction="#toSettingsPage" text="Settings" />
-            <Separator orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="10.0" />
             <Button mnemonicParsing="false" onAction="#toProfilePage" text="Profile" />
          </children>
          <effect>
