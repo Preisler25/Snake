@@ -26,8 +26,7 @@ public class FxmlFunc {
     }
 
     public FXMLLoader loadFXML(String fxml) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml + ".fxml"));
-        return loader;
+        return new FXMLLoader(getClass().getResource(fxml + ".fxml"));
     }
 
 }

@@ -3,10 +3,9 @@
 }
 
 .button {
-    -fx-background-color: #000000;
     -fx-text-fill: "white";
+    -fx-background-color: "black";
     -fx-font-size: 20px;
-    -fx-border-color: "white";
     -fx-border-width: 2px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -14,7 +13,7 @@
     -fx-background-insets: 0;
     -fx-border-insets: 0;
     -fx-cursor: "hand";
-    -fx-effect: dropshadow(gaussian, rgba(0,100,100,0.8), 10, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,1), 5, 0, 0, 0);
 }
 #clsButton{
     -fx-padding: 1px 10px 1px 10px;

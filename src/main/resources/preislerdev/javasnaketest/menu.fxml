@@ -20,6 +20,6 @@
             <DropShadow />
          </effect>
       </VBox>
-      <Button fx:id="clsButton" layoutX="62.0" layoutY="64.0" mnemonicParsing="false" onAction="#closeApp" scaleX="5.0" scaleY="5.0" text="X" />
+      <Button fx:id="clsButton" layoutX="101.0" layoutY="87.0" mnemonicParsing="false" onAction="#closeApp" scaleX="5.0" scaleY="5.0" text="X" />
    </children>
 </AnchorPane>
