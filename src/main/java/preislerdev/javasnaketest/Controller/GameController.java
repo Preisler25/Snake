@@ -17,7 +17,7 @@ public class GameController {
         root = loader.load();
 
         Map1Controller map1Controller = loader.getController();
-        Map1Controller.startGame(fxmlFunc.getStage(event).getScene());
+        Map1Controller.startGame(fxmlFunc.getStage(event));
 
         fxmlFunc.loadPage(root, event);
     }
