@@ -14,6 +14,7 @@ public class SnakeGame extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        System.out.println("Starting SnakeGame");
         FXMLLoader fxmlLoader = fxmlFunc.loadFXML("menu");
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
