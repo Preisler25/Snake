@@ -6,14 +6,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import preislerdev.javasnaketest.SnakeGame;
 
 public class FxmlFunc {
     private Stage stage;
-    private Scene scene;
+
 
     public void loadPage(Parent root, ActionEvent event) {
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 1920, 1000);
+        Scene scene = SnakeGame.getScene();
+        scene.setRoot(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.setFullScreen(true);

@@ -11,13 +11,24 @@ import java.util.Objects;
 
 public class SnakeGame extends Application {
     private final FxmlFunc fxmlFunc = new FxmlFunc();
+    static Scene scene;
+    static Scene getScene() {
+        return scene;
+    }
+
+    void setMainScene(Scene scene) {
+        SnakeGame.scene = scene;
+    }
+
 
     @Override
     public void start(Stage stage) throws Exception {
         System.out.println("Starting SnakeGame");
         FXMLLoader fxmlLoader = fxmlFunc.loadFXML("menu");
-        Scene scene = new Scene(fxmlLoader.load());
+        setMainScene(new Scene(fxmlLoader.load()));
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+
+
 
         Image icon = new Image("file:src/main/resources/icon.png");
         stage.getIcons().add(icon);
