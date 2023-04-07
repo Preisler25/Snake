@@ -9,7 +9,7 @@ import preislerdev.javasnaketest.FxmlFunc;
 
 public class MenuController {
     private Parent root;
-    private FxmlFunc fxmlFunc = new FxmlFunc();
+    private final FxmlFunc fxmlFunc = new FxmlFunc();
     @FXML
     protected void toGamePage(ActionEvent event) throws Exception {
 

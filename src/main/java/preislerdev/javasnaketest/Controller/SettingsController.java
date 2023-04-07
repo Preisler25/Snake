@@ -8,7 +8,7 @@ import preislerdev.javasnaketest.FxmlFunc;
 
 public class SettingsController {
     private Parent root;
-    private FxmlFunc fxmlFunc = new FxmlFunc();
+    private final FxmlFunc fxmlFunc = new FxmlFunc();
     @FXML
     public void toMenuPage(ActionEvent event) throws Exception {
         FXMLLoader loader = fxmlFunc.loadFXML("menu");

@@ -6,10 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class SnakeGame extends Application {
-    private FxmlFunc fxmlFunc = new FxmlFunc();
+    private final FxmlFunc fxmlFunc = new FxmlFunc();
 
     @Override
     public void start(Stage stage) throws Exception {

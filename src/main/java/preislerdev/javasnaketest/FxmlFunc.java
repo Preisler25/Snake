@@ -13,9 +13,11 @@ public class FxmlFunc {
 
     public void loadPage(Parent root, ActionEvent event) {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        scene = new Scene(root, 1280, 720);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
+        stage.setX(40);
+        stage.setY(40);
         stage.show();
     }
 
