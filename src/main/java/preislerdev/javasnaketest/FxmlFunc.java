@@ -21,9 +21,12 @@ public class FxmlFunc {
         stage.show();
     }
 
+    public Stage getStage(ActionEvent event) {
+        return (Stage)((Node)event.getSource()).getScene().getWindow();
+    }
+
     public FXMLLoader loadFXML(String fxml) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml + ".fxml"));
-        return loader;
+        return new FXMLLoader(getClass().getResource(fxml + ".fxml"));
     }
 
 }
