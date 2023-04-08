@@ -73,12 +73,11 @@ public class Snake implements Object{
     public void setSnakeHeadRect(Stage stage) {
         Scene scene = stage.getScene();
         Parent root = scene.getRoot();
+        
         this.snakeHeadRect = (Rectangle) root.lookup("#myObj");
         System.out.println("SnakeHeadRect: " + snakeHeadRect);
         snakeBody.add(snakeHeadRect);
     }
-
-
 
     public void move() {
         switch (direction) {

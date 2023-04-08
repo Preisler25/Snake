@@ -1,11 +1,14 @@
 package preislerdev.javasnaketest.Controller;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import preislerdev.javasnaketest.Util.Snake;
 import java.util.Timer;
 import java.util.TimerTask;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.Pane;
 
 
 public class Map1Controller {
@@ -15,7 +18,7 @@ public class Map1Controller {
     static Snake snakeObj = new Snake(0, 0, 2, 1);
     //gameEngine is the timer which runs the game it's a global variable so it can be stopped and resigned with new tasks
     static Timer gameEngine;
-
+    static Pane pane;
 
 
     //this method is called from the gameMenu, and it's going to start listening for key presses
@@ -45,16 +48,25 @@ public class Map1Controller {
         snakeObj.setSnakeHeadRect(stage);
 
         Scene scene = stage.getScene();
-        Rectangle rect = snakeObj.getSnakeHeadRect();
-        Group root = new Group(rect);
-        scene.setRoot(root);
-
+        getPlayGround(stage);
+        scene.setRoot(pane);
         genRandomApple(stage);
+
         //task is basically the main method of the game
         //its doing the movement, drawing and the collision detection
         TimerTask task = genTask();
         gameEngine = new Timer();
         gameEngine.schedule(task, 0, 200);
+    }
+
+    public static void getPlayGround(Stage stage) {
+        Rectangle rect = snakeObj.getSnakeHeadRect();
+        pane = new Pane(rect);
+
+        // Set the background color of the Pane to black
+        BackgroundFill backgroundFill = new BackgroundFill(Color.BLACK, null, null);
+        Background background = new Background(backgroundFill);
+        pane.setBackground(background);
     }
 
     //stops the game
@@ -76,15 +88,13 @@ public class Map1Controller {
 
     //generates a random apple
     public static void genRandomApple(Stage stage) {
-        //TODO: generate random apple x and y pos
         int x = (int) Math.floor(Math.random() * 10);
         int y = (int) Math.floor(Math.random() * 10);
 
         Rectangle apple = new Rectangle(100, 100);
         apple.setX(x*100);
         apple.setY(y*100);
-
-        System.out.println(stage.getScene().getRoot().getChildrenUnmodifiable());
-        stage.show();
+        apple.setFill(Color.RED);
+        pane.getChildren().add(apple);
     }
 }
