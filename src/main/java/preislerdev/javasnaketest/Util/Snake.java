@@ -1,12 +1,12 @@
 package preislerdev.javasnaketest.Util;
 
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 public class Snake implements Object{
     private int x;
@@ -87,5 +87,9 @@ public class Snake implements Object{
             case 2 -> y += 100;
             case 3 -> x -= 100;
         }
+    }
+
+    public Rectangle getSnakeHeadRect() {
+        return snakeHeadRect;
     }
 }

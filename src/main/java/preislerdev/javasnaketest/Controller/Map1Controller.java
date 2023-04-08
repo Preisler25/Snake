@@ -1,4 +1,5 @@
 package preislerdev.javasnaketest.Controller;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -39,8 +40,15 @@ public class Map1Controller {
         if (isMoving) {
             return;
         }
+        System.out.println("Snake is moving");
         isMoving = true;
         snakeObj.setSnakeHeadRect(stage);
+
+        Scene scene = stage.getScene();
+        Rectangle rect = snakeObj.getSnakeHeadRect();
+        Group root = new Group(rect);
+        scene.setRoot(root);
+
         genRandomApple(stage);
         //task is basically the main method of the game
         //its doing the movement, drawing and the collision detection
