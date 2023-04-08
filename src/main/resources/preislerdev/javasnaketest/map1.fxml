@@ -5,6 +5,6 @@
 
 <AnchorPane fx:id="alma" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preislerdev.javasnaketest.Controller.Map1Controller">
    <children>
-      <Rectangle fx:id="myObj" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutX="810.0" layoutY="287.0" stroke="BLACK" strokeType="INSIDE" width="90.0" />
+      <Rectangle fx:id="myObj" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    </children>
 </AnchorPane>
