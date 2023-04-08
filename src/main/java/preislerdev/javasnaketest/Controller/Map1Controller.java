@@ -24,6 +24,7 @@ public class Map1Controller {
         System.out.println("Snake moved up");
         snakeHeadY = snakeHeadY - 10;
         myObj.setCenterY(snakeHeadY);
+        myObj.setFill(javafx.scene.paint.Color.RED);
         ref();
     }
 
