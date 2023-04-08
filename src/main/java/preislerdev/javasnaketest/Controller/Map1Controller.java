@@ -8,15 +8,23 @@ import preislerdev.javasnaketest.Util.Snake;
 
 public class Map1Controller {
     @FXML
-    private static Circle snakeHead;
-    private static double snakeHeadX;
-    private static double snakeHeadY;
+    private static Circle myObj;
+
+    private static double snakeHeadX = 0;
+    private static double snakeHeadY = 0;
     Snake snake = new Snake(0, 0, 0, 0, 0, 0);
 
 
+    static void ref() {
+        System.out.println("Snake head X: " + snakeHeadX);
+        System.out.println("Snake head Y: " + snakeHeadY);
+    }
+
     static void moveSnakeUp() {
         System.out.println("Snake moved up");
-        snakeHead.setCenterY(snakeHeadY -= 10);
+        snakeHeadY = snakeHeadY - 10;
+        myObj.setCenterY(snakeHeadY);
+        ref();
     }
 
     public static void startGame(Stage stage) {
