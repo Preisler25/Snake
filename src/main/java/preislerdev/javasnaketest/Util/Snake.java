@@ -5,13 +5,15 @@ import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.util.*;
+import java.util.function.Consumer;
+
 public class Snake implements Object{
     private int x;
     private int y;
-    private int width;
-    private int height;
     private int direction;
     private int length;
+    private final List<Rectangle> snakeBody = new ArrayList<>();
     private Rectangle snakeHeadRect;
 
     public Snake(int x, int y, int direction, int length) {
@@ -22,8 +24,16 @@ public class Snake implements Object{
     }
     @Override
     public void draw() {
-        snakeHeadRect.setX(x);
-        snakeHeadRect.setY(y);
+        if (snakeHeadRect == null) {
+            return;
+        }
+
+        for (int i = length-1; i > 0; i++) {
+            snakeBody.get(i).setX(snakeBody.get(i-1).getX());
+            snakeBody.get(i).setY(snakeBody.get(i-1).getY());
+        }
+        snakeBody.get(0).setX(x);
+        snakeBody.get(0).setY(y);
     }
 
     //X
@@ -64,7 +74,10 @@ public class Snake implements Object{
         Scene scene = stage.getScene();
         Parent root = scene.getRoot();
         this.snakeHeadRect = (Rectangle) root.lookup("#myObj");
+        System.out.println("SnakeHeadRect: " + snakeHeadRect);
+        snakeBody.add(snakeHeadRect);
     }
+
 
 
     public void move() {

@@ -1,5 +1,6 @@
 package preislerdev.javasnaketest.Controller;
 import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import preislerdev.javasnaketest.Util.Snake;
 import java.util.Timer;
@@ -7,12 +8,16 @@ import java.util.TimerTask;
 
 
 public class Map1Controller {
+    //isMoving is used to check if the snake is moving or not
     static Boolean isMoving = false;
+    //snakeObj is the snake object which is the character of the game
     static Snake snakeObj = new Snake(0, 0, 2, 1);
+    //gameEngine is the timer which runs the game it's a global variable so it can be stopped and resigned with new tasks
     static Timer gameEngine;
 
 
 
+    //this method is called from the gameMenu, and it's going to start listening for key presses
     public static void startGame(Stage stage) {
         Scene scene = stage.getScene();
 
@@ -28,14 +33,17 @@ public class Map1Controller {
         });
     }
 
+
+    //this method is controlling what happens after the snake is moving
     public static void moveSnake(Stage stage) {
         if (isMoving) {
             return;
         }
         isMoving = true;
         snakeObj.setSnakeHeadRect(stage);
-
-
+        genRandomApple(stage);
+        //task is basically the main method of the game
+        //its doing the movement, drawing and the collision detection
         TimerTask task = genTask();
         gameEngine = new Timer();
         gameEngine.schedule(task, 0, 200);
@@ -47,7 +55,7 @@ public class Map1Controller {
         gameEngine.cancel();
     }
 
-    //game engine task which runs every 200ms
+    //game engine task which runs in a periodic manner
     public static TimerTask genTask() {
         return new TimerTask() {
             @Override
@@ -56,5 +64,19 @@ public class Map1Controller {
                 snakeObj.draw();
             }
         };
+    }
+
+    //generates a random apple
+    public static void genRandomApple(Stage stage) {
+        //TODO: generate random apple x and y pos
+        int x = (int) Math.floor(Math.random() * 10);
+        int y = (int) Math.floor(Math.random() * 10);
+
+        Rectangle apple = new Rectangle(100, 100);
+        apple.setX(x*100);
+        apple.setY(y*100);
+
+        System.out.println(stage.getScene().getRoot().getChildrenUnmodifiable());
+        stage.show();
     }
 }
