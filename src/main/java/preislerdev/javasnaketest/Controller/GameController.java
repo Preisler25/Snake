@@ -15,11 +15,11 @@ public class GameController {
     public void startGame(ActionEvent event) throws Exception {
         FXMLLoader loader = fxmlFunc.loadFXML("map1");
         root = loader.load();
-
-        Map1Controller map1Controller = loader.getController();
+        System.out.println("root loaded");
         Map1Controller.startGame(fxmlFunc.getStage(event));
-
+        System.out.println("-Game started-");
         fxmlFunc.loadPage(root, event);
+        System.out.println("Loaded page");
     }
 
     @FXML

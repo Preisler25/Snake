@@ -1,44 +1,65 @@
 package preislerdev.javasnaketest.Controller;
-import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import preislerdev.javasnaketest.Util.Snake;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+
 public class Map1Controller {
-    @FXML
-    private static Circle myObj;
+    static Boolean isMoving = false;
+    static Snake snakeObj = new Snake(10, 10, 10, 10, 0, 1);
+    static Timer gameEngine;
 
-    private static double snakeHeadX = 0;
-    private static double snakeHeadY = 0;
-    Snake snake = new Snake(0, 0, 0, 0, 0, 0);
+    public static void moveSnake(Stage stage) {
+        if (isMoving) {
+            return;
+        }
 
+        isMoving = true;
 
-    static void ref() {
-        System.out.println("Snake head X: " + snakeHeadX);
-        System.out.println("Snake head Y: " + snakeHeadY);
+        Scene scene = stage.getScene();
+        Parent root = scene.getRoot();
+        Rectangle snakeRect= (Rectangle) root.lookup("#myObj");
+
+        TimerTask task = genTask();
+        gameEngine = new Timer();
+        gameEngine.schedule(task, 0, 200);
     }
 
-    static void moveSnakeUp() {
-        System.out.println("Snake moved up");
-        snakeHeadY = snakeHeadY - 10;
-        myObj.setCenterY(snakeHeadY);
-        myObj.setFill(javafx.scene.paint.Color.RED);
-        ref();
+    public static TimerTask genTask() {
+        return new TimerTask() {
+            @Override
+            public void run() {
+                snakeObj.move();
+            }
+        };
+    }
+
+    void inGame() {
+        if (isMoving) {
+
+        }else{
+
+        }
+    }
+
+    public static void stopGame() {
+        isMoving = false;
+        gameEngine.cancel();
+        System.out.println("Game stopped");
     }
 
     public static void startGame(Stage stage) {
         Scene scene = stage.getScene();
-        System.out.println("Game started");
-
-        stage.setScene(scene);
-        stage.show();
-
 
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
-                case W -> moveSnakeUp();
+                case SPACE -> moveSnake(stage);
+                case ESCAPE -> stopGame();
             }
         });
     }

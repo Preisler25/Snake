@@ -72,4 +72,21 @@ public void setSnakeLength(int length) {
     public void setDirection(int direction) {
         this.direction = direction;
     }
+
+    public void move() {
+        switch (direction) {
+            case 0:
+                y -= 10;
+                break;
+            case 1:
+                x += 10;
+                break;
+            case 2:
+                y += 10;
+                break;
+            case 3:
+                x -= 10;
+                break;
+        }
+    }
 }
