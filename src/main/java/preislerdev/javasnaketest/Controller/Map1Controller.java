@@ -92,6 +92,7 @@ public class Map1Controller {
         if (snakeObj.getSnakeHeadRect().getX() == active_apple.getX() && snakeObj.getSnakeHeadRect().getY() == active_apple.getY()) {
             System.out.println("Collision");
             snakeObj.grow(pane);
+            System.out.println(pane.getChildren());
             pane.getChildren().remove(active_apple);
             genRandomApple(stage);
         }

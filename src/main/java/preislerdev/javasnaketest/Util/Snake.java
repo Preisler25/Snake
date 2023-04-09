@@ -28,7 +28,6 @@ public class Snake implements Object{
         newRect.setX(snakeBody.get(snakeBody.size()-1).getX());
         newRect.setY(snakeBody.get(snakeBody.size()-1).getY());
         snakeBody.add(newRect);
-        pane.getChildren().add(newRect);
     }
 
     @Override
