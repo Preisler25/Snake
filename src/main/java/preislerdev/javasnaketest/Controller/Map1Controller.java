@@ -19,6 +19,7 @@ public class Map1Controller {
     //gameEngine is the timer which runs the game it's a global variable so it can be stopped and resigned with new tasks
     static Timer gameEngine;
     static Pane pane;
+    static Rectangle active_apple;
 
 
     //this method is called from the gameMenu, and it's going to start listening for key presses
@@ -54,7 +55,7 @@ public class Map1Controller {
 
         //task is basically the main method of the game
         //its doing the movement, drawing and the collision detection
-        TimerTask task = genTask();
+        TimerTask task = genTask(stage);
         gameEngine = new Timer();
         gameEngine.schedule(task, 0, 200);
     }
@@ -76,14 +77,24 @@ public class Map1Controller {
     }
 
     //game engine task which runs in a periodic manner
-    public static TimerTask genTask() {
+    public static TimerTask genTask(Stage stage) {
         return new TimerTask() {
             @Override
             public void run() {
                 snakeObj.move();
                 snakeObj.draw();
+                checkCollision(stage);
             }
         };
+    }
+
+    static void checkCollision(Stage stage) {
+        if (snakeObj.getSnakeHeadRect().getX() == active_apple.getX() && snakeObj.getSnakeHeadRect().getY() == active_apple.getY()) {
+            System.out.println("Collision");
+            snakeObj.grow(pane);
+            pane.getChildren().remove(active_apple);
+            genRandomApple(stage);
+        }
     }
 
     //generates a random apple
@@ -91,10 +102,10 @@ public class Map1Controller {
         int x = (int) Math.floor(Math.random() * 10);
         int y = (int) Math.floor(Math.random() * 10);
 
-        Rectangle apple = new Rectangle(100, 100);
-        apple.setX(x*100);
-        apple.setY(y*100);
-        apple.setFill(Color.RED);
-        pane.getChildren().add(apple);
+        active_apple = new Rectangle(100, 100);
+        active_apple.setX(x*100);
+        active_apple.setY(y*100);
+        active_apple.setFill(Color.RED);
+        pane.getChildren().add(active_apple);
     }
 }

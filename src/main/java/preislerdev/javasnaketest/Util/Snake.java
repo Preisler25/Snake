@@ -3,6 +3,7 @@ package preislerdev.javasnaketest.Util;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -22,6 +23,14 @@ public class Snake implements Object{
         this.direction = direction;
         this.length = length;
     }
+    public void grow(Pane pane) {
+        Rectangle newRect = new Rectangle(100, 100);
+        newRect.setX(snakeBody.get(snakeBody.size()-1).getX());
+        newRect.setY(snakeBody.get(snakeBody.size()-1).getY());
+        snakeBody.add(newRect);
+        pane.getChildren().add(newRect);
+    }
+
     @Override
     public void draw() {
         if (snakeHeadRect == null) {
